@@ -1,0 +1,7 @@
+/.idea/
+
+/scraped/
+/benchmarks.txt
+/summaries.txt
+/env/
+/charts/data.json
