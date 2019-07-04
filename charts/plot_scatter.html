@@ -1,0 +1,43 @@
+<title>CPU Speed over the last 25 years</title>
+<div id="vis"></div>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@4"></script>
+<script>
+  vegaEmbed('#vis', {
+    $schema: 'https://vega.github.io/schema/vega-lite/v3.json',
+    width: 1200,
+    height: 700,
+    title: {
+      text: document.title,
+      fontSize: 20,
+    },
+    data: {url: 'scatter-data.json'},
+    mark: {
+      type: 'circle',
+    },
+    encoding: {
+      x: {
+        title: 'Date',
+        timeUnit: 'yearmonth',
+        field: 'date',
+        type: 'temporal',
+        axis: {
+          labelFontSize: 16,
+          titleFontSize: 18,
+          domain: false,
+          format: '%Y-%m'
+        },
+      },
+      y: {
+        title: 'Speed (GHz)',
+        field: 'speed',
+        type: 'quantitative',
+        axis: {
+          labelFontSize: 16,
+          titleFontSize: 18,
+        }
+      }
+    }
+  })
+</script>

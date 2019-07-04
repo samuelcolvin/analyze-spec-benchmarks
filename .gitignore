@@ -4,4 +4,4 @@
 /benchmarks.txt
 /summaries.txt
 /env/
-/charts/data.json
+/charts/*.json

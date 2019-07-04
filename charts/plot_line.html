@@ -8,9 +8,15 @@
     $schema: 'https://vega.github.io/schema/vega-lite/v3.json',
     width: 1200,
     height: 700,
-    title: document.title,
-    data: {url: 'data.json'},
-    mark: 'circle',
+    title: {
+      text: document.title,
+      fontSize: 20,
+    },
+    data: {url: 'line-data.json'},
+    mark: {
+      type: 'line',
+      point: true,
+    },
     encoding: {
       x: {
         title: 'Date',
@@ -18,14 +24,20 @@
         field: 'date',
         type: 'temporal',
         axis: {
+          labelFontSize: 16,
+          titleFontSize: 18,
           domain: false,
-          format: '%Y-%m'
+          // format: '%Y',
         },
       },
       y: {
-        title: 'MHz',
-        field: 'mhz',
-        type: 'quantitative'
+        title: 'Speed (GHz)',
+        field: 'speed',
+        type: 'quantitative',
+        axis: {
+          labelFontSize: 16,
+          titleFontSize: 18,
+        }
       }
     }
   })
